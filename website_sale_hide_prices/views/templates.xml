@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+	<template id="hide_product_prices_item" inherit_id="website_sale.products_item">
+	    <xpath expr="//div[@class='product_price']" position="replace">
+	    </xpath>
+	</template>
+	<template id="hide_product_prices" inherit_id="website_sale.product_price">
+	    <xpath expr="//div" position="replace">
+	    </xpath>
+	</template>
+	<template id="hide_cart_lines_prices" inherit_id="website_sale.cart_lines">
+	    <xpath expr="//thead/tr/th[4]" position="replace">
+	    </xpath>
+	    <xpath expr="//tbody/t/tr/td[5]" position="replace">
+	    </xpath>
+
+	</template>
+	<template id="hide_total" inherit_id="website_sale.total">
+	    <xpath expr="//div" position="replace">
+	    </xpath>
+	</template>
+	<template id="hide_cart_summary_prices" inherit_id="website_sale.cart_summary">
+	    <xpath expr="//thead/tr/th[4]" position="replace">
+	    </xpath>
+	    <xpath expr="//tbody/tr/td[5]" position="replace">
+	    </xpath>
+	</template>
+	<template id="hide_confirmation_prices" inherit_id="website_sale.confirmation">
+	    <xpath expr="//h3" position="replace" >
+	    </xpath>
+	    <xpath expr="//table" position="replace">
+	    </xpath>
+	</template>
+
+
+	<!-- NOW WE SUPPRESS PRICE ON /my/quotes /my/invoices -->
+	<template id="hide_portal_my_quotations" inherit_id="sale.portal_my_quotations">
+	    <xpath expr="//thead/tr/th[5]" position="replace"></xpath>
+	    <xpath expr="//t/tr/td[5]" position="replace"></xpath>
+
+	</template>
+	<template id="hide_portal_my_orders" inherit_id="sale.portal_my_orders">
+	    <xpath expr="//thead/tr/th[4]" position="replace"></xpath>
+	    <xpath expr="//t/tr/td[4]" position="replace"></xpath>
+	</template>
+
+	<template id="hide_my_order_prices" inherit_id="sale.sale_order_portal_template">
+	    <xpath expr="//t[@t-set='title']" position="replace"></xpath>
+	</template>
+	<template id="hide_my_order_portal_content_price" inherit_id="sale.sale_order_portal_content">
+	    <xpath expr="//thead/tr/th[6]" position="replace"></xpath>
+	    <xpath expr="//thead/tr/th[3]" position="replace"></xpath>
+	    <xpath expr="//tr/t/td[6]" position="replace"></xpath>
+	    <xpath expr="//tr/t/td[3]" position="replace"></xpath>
+	    <xpath expr="//div[@id='total']" position="replace"></xpath>
+	</template>
+
+
+	<!-- NOW WE SUPPRESS PRICE ON /my/invoices -->
+	<template id="hide_price_my_invoices" inherit_id="account.portal_my_invoices">
+	    <xpath expr="//thead/tr/th[5]" position="replace"></xpath>
+	    <xpath expr="//t/tr/td[5]" position="replace"></xpath>
+	</template>
+	<template id="hide_price_invoice_portal" inherit_id="account.portal_invoice_page">
+	    <xpath expr="//t[@t-set='title']" position="replace"></xpath>
+	</template>
+
+    </data>
+</odoo>
