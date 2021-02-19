@@ -1,0 +1,4 @@
+[submodule "rmznbyr/drgsh"]
+	path = rmznbyr/drgsh
+	url = git@github.com:rmznbyr/drgsh.git
+	branch = master
