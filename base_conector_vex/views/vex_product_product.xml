@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="product_product_vex_herencia" model="ir.ui.view">
+           <field name="name">Product.view</field>
+           <field name="model">product.product</field>
+           <field name="inherit_id" ref="product.product_product_tree_view"/>
+           <field name="arch" type="xml">
+              <xpath expr="//field[@name='name']" position="after">
+                   <field name="server_vex" optional="show" />
+                   <field name="id_vex" string="WooCommerce ID"  optional="show" />
+                   <field name="id_vex_varition" optional="show"  />
+                  <field name="vex_regular_price" optional="show"  />
+              </xpath>
+           </field>
+    </record>
+</odoo>
