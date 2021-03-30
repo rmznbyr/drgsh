@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-  <data>
-      <record id="demo_product_template" model="product.product">
-            <field name="name">Producto temporal conector</field>
-            <field name="id_vex_varition">tmp</field>
-      </record>
-  </data>
-</odoo>
