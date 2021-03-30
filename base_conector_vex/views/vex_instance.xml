@@ -1,0 +1,100 @@
+<odoo>
+    <record id="view_base_vex_server_tree" model="ir.ui.view">
+        <field name="name">vex.instance.tree</field>
+        <field name="model">vex.instance</field>
+        <field name="arch" type="xml">
+            <tree string="Vex Instance">
+                <field name="name"/>
+                <field name="conector"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="vex_instance_form_view">
+            <field name="name">vex.instance.form</field>
+            <field name="model">vex.instance</field>
+            <field name="arch" type="xml">
+                <form string="Meli Server Form">
+                    <sheet>
+                    	<div class="oe_button_box" name="button_box">
+                            <button name="fun_test" type="object" class="oe_stat_button" icon="fa-spinner">
+                                Test Connection
+                            </button>
+                        </div>
+                        <group>
+                             <group>
+                                  <field name="name" />
+                                   <field name="conector" invisible="1"/>
+                             </group>
+                             <group>
+                                 <field name="company" />
+                             </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Basic Configuration" name ="basic_conf">
+                                <div class="row">
+                                     <div class="col-6">
+                                         <group>
+                                               <field name="picking_policy"/>
+                                               <field name="location_id"/>
+                                               <field name="journal_id"/>
+                                               <field name="payment_term"/>
+                                               <field name="order_after"/>
+                                               <field name="discount_fee"/>
+                                               <field name="all_orders" invisible="1"/>
+                                               <field name="all_status_orders" invisible="1"/>
+                                               <field name="import_stock"/>
+                                        </group>
+                                     </div>
+                                      <div class="col-6">
+                                          <group>
+                                              <field name="warehouse"/>
+                                              <field name="categ_id"/>
+                                              <field name="active_automatic"/>
+                                              <field name="pricelist" />
+                                              <field name="sales_team" />
+                                              <field name="sequence_id" />
+                                          </group>
+                                      </div>
+                                </div>
+                            </page>
+                            <page string="Orders State" name ="state_orders">
+                                <field name="state_orders">
+                                    <tree editable="bottom">
+                                        <field name="conector" />
+                                        <field name="state" domain="[('conector', '=', conector)]" />
+                                        <field name="odoo_state" />
+
+                                        <!--
+                                        <field name="set_invoice_state" />
+                                        <field name="created_invoice" />
+                                        <field name="created_shipment" />
+                                        -->
+                                    </tree>
+                                 </field>
+                            </page>
+                            <page string="Import Lines" name ="import_line">
+                                <button name="stop_sync" type="object"
+                                    class="oe_stat_button" icon="fa-spinner"
+                                    >
+                                        Stop Sync
+                                </button>
+                                <field name="import_lines">
+                                    <tree editable="bottom">
+                                        <field name="orden" />
+                                        <field name="url" />
+                                        <field name="instance" />
+                                        <field name="accion" />
+                                        <field name="state" />
+                                    </tree>
+                                 </field>
+                            </page>
+
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+    </record>
+</odoo>
